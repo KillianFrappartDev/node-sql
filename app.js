@@ -29,4 +29,15 @@ app.get('/api/movies/:id', (req, res, next) => {
   });
 });
 
+app.get('/api/search/:year', (req, res) => {
+  connection.query('SELECT * FROM movies WHERE year=?', [req.params.year], (err, results) => {
+    if (err) res.status(500).send('Error');
+    res.status(200).json(results);
+  });
+});
+
+app.get('/api/user', (req, res) => {
+  res.status(401).send('Unauthorized');
+});
+
 app.listen(3000, () => console.log('Server up and running!'));
