@@ -9,3 +9,5 @@ const connection = mysql.createConnection({
 });
 
 module.exports = connection;
+
+//   "env": { "PORT": 3000, "DB_HOST": "localhost", "DB_USER": "root", "DB_PASSWORD": "3698dd2de", "DB_NAME": "movies" }
